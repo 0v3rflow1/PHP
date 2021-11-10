@@ -34,14 +34,15 @@
                 $log=isset($_POST["log"])?htmlentities($_POST["log"]):"\nnope!\n";
                 //file_get_contents("http://127.0.0.1:6666/".$log);
                 @file_put_contents("pwned31337.log", "\n - ".$log."\n",FILE_APPEND | LOCK_EX);
-                header("Location:/challenge/php/1/pwned31337.log#$log");
+                //header("Location:/challenge/php/1/pwned31337.log#$log");
+                header("Location:/challenge/1/pwned31337.log#$log");
         }else{
                 echo "Nope!";
         }
 ?>
 
 <div style='width:500px;margin:0 auto;'>
-        <form action='/challenge/php/1/index.php' method='<?=$method?>'>
+        <form action='/challenge/1/index.php' method='<?=$method?>'>
                 <input type='text' placeholder='administrator' name='user<?=$magic?>'/><br/><br/>
                 <input type='password' value='solarwinds123' name='pass<?=$magic?>'/><br/><br/>
                 <input type='hidden' value='<?=$magic?>' name='magic'/>
