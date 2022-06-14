@@ -2,6 +2,8 @@
 //Ping @ov3rflow1
 
 highlight_file('index.php');
+//patch 1 for @brutelogic payload -> %0Aalert(1)})(function(){//
+$_GET['payload']=preg_replace("/\s+/"," ",$_GET['payload']);
 $sanitized_1=htmlentities($_GET['payload'],ENT_QUOTES);
 
 $sanitized_2=trim(json_encode($_GET['payload'],true),'"');
